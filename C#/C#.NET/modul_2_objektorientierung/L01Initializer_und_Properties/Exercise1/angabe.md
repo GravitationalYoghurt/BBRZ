@@ -242,7 +242,7 @@ errorCodes.Add(200, "OK");
 ```
 
 ### Teil C: Verschachtelung (Nested Collections)
-Hier zeigt sich die wahre Stärke. Wir haben ein Dictionary, dessen *Values* wiederum Listen sind (z.B. Abteilungen und ihre Mitarbeiter).
+Hier zeigt sich die wahre Stärke. Wir haben ein Dictionary, dessen *Values* wiederum Listen sind (z.B. Abteilungen und ihre Mitarbeiter:innen).
 Im alten Stil muss man Hilfsvariablen für die Listen erstellen oder sehr umständlich tippen.
 
 **Aufgabe:** Wandle dies in einen einzigen, sauberen Initialisierungsbaum um. Du brauchst keine Variablen wie `devs` oder `hr` mehr, du kannst die Listen direkt im Dictionary initialisieren (`new List<string> { ... }`).

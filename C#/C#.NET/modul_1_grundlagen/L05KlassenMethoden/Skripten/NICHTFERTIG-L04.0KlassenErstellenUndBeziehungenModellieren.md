@@ -424,3 +424,5 @@ TODO referenz auf das object von welchem der aufruf kommt. doggo.help() und in h
 TODO
 ### die ist beziehung
 TODO
+
+https://dev.to/moh_moh701/mastering-c-fundamentals-the-is-a-relation-32eo
