@@ -7,15 +7,13 @@
 Wann benutze ich Vererbung und wann ein Interface.
 
 
-- **Vererbung (Inheritance) ist nicht Code-Sharing**
-
+- **Vererbung (Inheritance) ist nicht Code-Sharing**\
     Vererbung ist mehr und anders als Code-Sharing
 
 
 - **is-A Verhältnis**
 
-	Ist eine Giraffe ein Tier? Ja, eine Giraffe (child class) ist ein (**is-A**) Tier (base class).
-
+	Ist eine Giraffe ein Tier? Ja, eine Giraffe (child class) ist ein (**is-A**) Tier (base class).\
 	Ist ein Auto ein Haus? Nein, ein Auto ist kein Haus.
 
 
@@ -25,13 +23,11 @@ Wann benutze ich Vererbung und wann ein Interface.
 - **Nur Eigenschaften (properties) oder Methoden Signaturen zu teilen ist nicht genug.**
 
 
-- **Vererbung kann dich in eine Sackgasse führen!**
-
+- **Vererbung kann dich in eine Sackgasse führen!**\
 	Vererben muß Sinn machen und sollte nicht überdehnt werden.
 
 
-- **Frage dich was ist der Punkt?**
-
+- **Frage dich was ist der Punkt?**\
 	Wenn es nur um Code-Sharing geht, erstellen eine externe Klasse und erstelle eine Methode 	in dieser Klasse, also noch kein Argument für Vererbung.
 
 $~~$
@@ -80,8 +76,7 @@ public enum CarType
 Fein, wir beginnen jetzt Autos zu vermieten.
 
 
-Aber:
-
+Aber:\
 “Good news! Wir haben unseren ersten Truck!“
 
 $~~$
@@ -91,9 +86,8 @@ $~~$
 Oh oh! Das Programm ist für Autovermietung ausgelegt. Die Lösung: Vererbung!
 
 
-Also anstatt von `RentalCar` haben wir jetzt `RentalVehicle`, gut.
-
-Wir ein Klasse `RentalCar` die von `RentalVehicle` erbt und natürlich auch eine Klasse `RentalTruck`, die von `RentalVehicle` erbt.
+Also anstatt von `RentalCar` haben wir jetzt `RentalVehicle`, gut.\
+Wir erstelen eine Klasse `RentalCar` die von `RentalVehicle` erbt und natürlich auch eine Klasse `RentalTruck`, die von `RentalVehicle` erbt.
 
 
 **RentalCar.cs**
@@ -102,7 +96,7 @@ public class RentalCar : RentalVehicle
 {
 }
 ```
-
+\
 **RentalTruck.cs**
 ```csharp
 public class RentalTruck : RentalVehicle
@@ -112,7 +106,7 @@ public class RentalTruck : RentalVehicle
 
 und in unserer Enum `CarType` fügen wir …  nun ja,  ein Coupe-Truck oder Cabrio-Truck? Das paßt nicht besonders gut, also eine eigene `TruckType` Enum:
 
-
+\
 **Enums.cs + TruckType**
 ```csharp
 public enum TruckType
@@ -126,8 +120,7 @@ public enum TruckType
 
 und unsere Enum `CarType` kommt von `RentalVehicle` in die Klasse `RentalCar`, in `RentalTruck` erzeugen wir uns eine Property `TruckType`:
 
-
-
+\
 **RentalCar.cs**
 ```csharp
 public class RentalCar : RentalVehicle
@@ -135,7 +128,7 @@ public class RentalCar : RentalVehicle
     public CarType Style { get; set; }
 }
 ```
-
+\
 **RentalTruck.cs**
 ```csharp
 public class RentalTruck : RentalVehicle
@@ -147,8 +140,7 @@ public class RentalTruck : RentalVehicle
 Nun haben wir zwei unterschiedliche Typen `CarType` und `TruckType` mit der gleichen Porperty. Macht schon Sinn, da es sich jeweils um die Art des Fahrzeugs handelt, die Ausprägungen aber jeweils unterschiedlich sind.
 
 
-Anderes Beispiel:
-
+Anderes Beispiel:\
 Wir vermieten (kurzfristig) Matchboxautos und sehen uns an, wie sich die Eigenschaft Gewicht im Verhältnis zum Gewicht der Klasse `RentalTruck` verhält:
 
 
@@ -166,15 +158,13 @@ public class Matchbox : RentalVehicle
 }
 ```
 
-Ist das Gewicht von Matchboxautos wirklich vergleichbar mit dem Gewicht von LKWs?
-
+Ist das Gewicht von Matchboxautos wirklich vergleichbar mit dem Gewicht von LKWs?\
 Hat es die selbe Funktion?
 
 Also der Umstand, dass Properties den gleichen Namen und sogar den gleichen Typen haben heißt nicht, dass sie die gleiche Funktion haben.
 
 
-Zurück:
-
+Zurück:\
 Nun gut, wir habe jetzt ein robusteres System. Wir haben Vererbung verwendet, was geholfen hat, da wir jetzt die ‘base Klasse‘ `RentalVehicle` haben und gemeinsam genutzte Properties und Methoden, aber auch spezifische Methoden und Properties der jeweiligen Klasse (`RentalCar` und `RentalTruck`).
 
 
@@ -183,7 +173,7 @@ Noch nicht erwähnt: Unsere Freundin W. lebt am Attersee und ihr ahnt es schon. 
 
 Wir fügen einfach eine Klasse `RentalMotorBoat` hinzu:
 
-
+\
 **RentalMotorBoat.cs**
 ```csharp
 public class  RentalMotorBoat : RentalVehicle
@@ -191,11 +181,10 @@ public class  RentalMotorBoat : RentalVehicle
 }
 ```
 
-Soweit so gut. Wir haben nur die Rechnung ohne unsere Freundin W. gemacht. Sie hat jetzt Segelboote im Verleih!
-
+Soweit so gut. Wir haben nur die Rechnung ohne unsere Freundin W. gemacht. Sie hat jetzt Segelboote im Verleih!\
 Die Properties passen noch soweit, aber unsere Methoden? `StartEngine()`, `StopEngine()`? Bei einem Segelboot? Gut wir probieren es aus und fügen eine Klasse hinzu:
 
-
+\
 **RentalSailboat.cs** (hypothetisch)
 ```csharp
 public class RentalSailBoat : RentalVehicle
@@ -205,7 +194,7 @@ public class RentalSailBoat : RentalVehicle
 
 Wir erben also von `RentalVehicle`. Ein Segelboot hat eine `RentalId`, eine:n `CurrentRenter` auch `PricePerDay` und `NumberOfPassengers`. Aber unsere Probleme tauchen auf bei `StartEngine()` und `StopEngine()`. Ein Segelboot hat nun mal keinen Motor. Was wir machen könnten wäre diese Methoden zu überschreiben. Dazu müssen wir sie in der base class als `virtual` setzen.
 
-
+\
 **RentalVehicles.cs**
 ```csharp
 public virtual void StartEngine()
@@ -222,7 +211,7 @@ public virtual void StopEngine()
 
 und überschreiben `override` in unserer `RentalSailboat` Klasse:
 
-
+\
 **RentalSailboat.cs** (hypothetisch)
 ```csharp
 public class RentalSailBoat : RentalVehicle
@@ -233,7 +222,7 @@ public class RentalSailBoat : RentalVehicle
     }
 }
 ```
-
+\
 Nun sind wir in einer Sackgasse. Wir haben diese zwei Methoden die nichts machen bzw. überhaupt nicht aufgerufen werden sollten. Methoden die nichts machen könnten eine falsche Erwartungshaltung hervorbringen. Und eine exception ist auch keine Lösung. Wir haben nun diesen Code der fehlgeleitet ist. Wenn wir beispielsweise den Code weitergeben müssen wir aktiv darauf hinweisen, dass es da diese zwei Methoden gibt die bitte nicht aufzurufen sind. Das ist unsauber. Hier sind es für Übungszwecke zwei Methoden, stellen wir uns vor es sind 30…
 
 Stell dir vor die Methode heißt nicht `StartEngine()` sondern `SetDatabase()`, und du erwartest, dass etwas passiert was aber tatsächlich nie stattfindet (da wäre dann die exception zumindest hilfreich den Fehler zu finde). Also du möchtest diese Methode nicht ohne exception, aber mit nun auch nicht optimal.
@@ -267,7 +256,7 @@ Wir beginne nun damit, dass wir zwei verschiedene Dinge haben, *Rental* und *Veh
 
 Wir machen uns ein Interface und nennen es `IRental`. Wir übernehmen die Properties `RentalID`, `CurrentRenter` und `PricePerDay`, lassen aber die Eigenschaft `NumberOfPassengers` weg, da wir uns voll auf Rental konzentrieren. `public` brauchen wir für die Properties in unserem Interface ebenso nicht.
 
-
+\
 **BetterRentalService/IRental.cs**
 ```csharp
 public interface IRental
@@ -283,7 +272,7 @@ Jetzt haben wir ein Rental, einen Verleih. Und oben habe wir unser Interface, da
 
 Nun erzeugen wir unsere **Klasse Vehicle** als Vererbungsbasis. `NumberOfPassengers` scheint hier als Property gut zu funktionieren. Das ist jetzt noch keine so tolle Vererbung, also geben wir unsere zwei Methoden `StartEngine()` und `StopEngine()` auch noch dazu.
 
-
+\
 **BetterRentalService/LandVehicles.cs**
 ```csharp
 public class Vehicle
@@ -315,7 +304,7 @@ Unsere Enums passen noch, also copy&past in unseren `BetterRentalService` (Achtu
 
 Wir erzeugen uns wieder unser `RentalCar` und erben von `LandVehicle` und `IRental`. Wir übernehmen die Property `CarType` und implementieren unser Interface `IRental` (Strg + .).
 
-
+\
 **BetterRentalService/RentalCar.cs**
 ```csharp
 public class RentalCar : LandVehicle, IRental
@@ -329,7 +318,7 @@ public class RentalCar : LandVehicle, IRental
 
 das gleiche für `RentalTruck`
 
-
+\
 **BetterRentalService/RentalTruck.cs**
 ```csharp
 public class RentalTruck : LandVehicle, IRental
@@ -340,7 +329,7 @@ public class RentalTruck : LandVehicle, IRental
     public decimal PricePerDay { get; set; }
 }
 ```
-
+\
 Jetzt haben wir also wieder unser `RentalCar` und unser `RentalTruck`. Und die Vererbungsstruktur erlaubt uns auch wieder auf die Methoden `StartEngine()` und `StopEngine()` zuzugreifen. Wir haben `NumberOfPassengers`. Wir haben also geteilte Logik nicht unbedingt geteilte Properties oder Signatures. Wir haben die Idee, dass beide ein Landfahrzeug sind. Wir können jetzt verschiedene Arten von Landfahrzeugen hinzufügen, SUV, Bus, usw.
 
 
@@ -359,7 +348,7 @@ Also wir haben eine gewisse Dopplung in der Implementation unserer Logik, aber d
 
 Aber sehen wir uns nun unser Segelboot an. Es ist kein LandVehicle, also erben wir auch nicht davon, aber wir wollen es vermieten, also implementieren wir unser Interface.
 
-
+\
 **BetterRentalService/RentalSailboat.cs**
 ```csharp
 public class RentalSailboat : IRental
