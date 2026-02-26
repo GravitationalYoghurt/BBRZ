@@ -7,13 +7,12 @@
 Wann benutze ich Vererbung und wann ein Interface.
 
 
-- **Vererbung (Inheritance) ist nicht Code-Sharing**\
+- **Vererbung (Inheritance) ist nicht Code-Sharing**  
     Vererbung ist mehr und anders als Code-Sharing
 
 
-- **is-A Verhältnis**
-
-	Ist eine Giraffe ein Tier? Ja, eine Giraffe (child class) ist ein (**is-A**) Tier (base class).\
+- **is-A Verhältnis**  
+	Ist eine Giraffe ein Tier? Ja, eine Giraffe (child class) ist ein (**is-A**) Tier (base class).  
 	Ist ein Auto ein Haus? Nein, ein Auto ist kein Haus.
 
 
@@ -23,11 +22,11 @@ Wann benutze ich Vererbung und wann ein Interface.
 - **Nur Eigenschaften (properties) oder Methoden Signaturen zu teilen ist nicht genug.**
 
 
-- **Vererbung kann dich in eine Sackgasse führen!**\
+- **Vererbung kann dich in eine Sackgasse führen!**  
 	Vererben muß Sinn machen und sollte nicht überdehnt werden.
 
 
-- **Frage dich was ist der Punkt?**\
+- **Frage dich was ist der Punkt?**  
 	Wenn es nur um Code-Sharing geht, erstellen eine externe Klasse und erstelle eine Methode 	in dieser Klasse, also noch kein Argument für Vererbung.
 
 $~~$
