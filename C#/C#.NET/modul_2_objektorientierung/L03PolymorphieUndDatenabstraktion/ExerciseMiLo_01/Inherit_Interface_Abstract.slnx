@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BetterRentalService/BetterRentalService.csproj" Id="f20445de-d58a-4eda-95b3-0088c575471c" />
+  <Project Path="Inherit_Interface_Abstract/Inherit_Interface_Abstract.csproj" />
+  <Project Path="RentalService/RentalService.csproj" />
+</Solution>
