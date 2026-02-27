@@ -4,6 +4,8 @@
 
 
 
+
+
 Wann benutze ich Vererbung und wann ein Interface.
 
 
@@ -394,4 +396,5 @@ foreach (var r in rentals)
 
 $~~$
 --
-based on: [Inheritance vs Interfaces in C\#: Object Oriented Programming](https://youtu.be/4sxyDXt1igs?si=9Zc8vKeJHSHUYMPC)
+
+<span style="font-family: 'Calibri'; font-size: 10px;">based on: [Inheritance vs Interfaces in C\#: Object Oriented Programming</span>](https://youtu.be/4sxyDXt1igs?si=9Zc8vKeJHSHUYMPC)
