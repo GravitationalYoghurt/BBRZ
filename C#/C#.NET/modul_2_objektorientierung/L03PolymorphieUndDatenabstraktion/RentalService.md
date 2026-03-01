@@ -371,6 +371,7 @@ $~~$
 Wie verwenden wir unser Gerüst nun in der Main-Methode?
 
 
+
 **BetterRentalService/Program.cs**
 ```csharp
 List<IRental> rentals = new List<IRental>();
@@ -397,4 +398,4 @@ foreach (var r in rentals)
 $~~$
 --
 
-<span style="font-family: 'Calibri'; font-size: 10px;">based on: [Inheritance vs Interfaces in C\#: Object Oriented Programming</span>](https://youtu.be/4sxyDXt1igs?si=9Zc8vKeJHSHUYMPC)
+based on: [Inheritance vs Interfaces in C\#: Object Oriented Programming](https://youtu.be/4sxyDXt1igs?si=9Zc8vKeJHSHUYMPC)
